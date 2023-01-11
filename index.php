@@ -45,7 +45,6 @@ if (isset($_POST['birthday'])) {
             if (isset($birthday) && $_COOKIE['firstEntry'] > 1) {
                 $end = date_create('tomorrow');
                 $dateTimeNow = date_create();
-                $interval = $end->diff($dateTimeNow);
                 $today = date_create()->modify('noon')->getTimestamp();
                 $birthdayThisYear = mktime(12, 0, 0, $birthday->format('m'), $birthday->format('d'), $dateTimeNow->format('Y'));
                 if ($today > $birthdayThisYear) {
